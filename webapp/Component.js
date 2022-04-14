@@ -1,12 +1,10 @@
 sap.ui.define([
-        "sap/ui/core/UIComponent",
-        "sap/ui/Device",
-        "sap/training/demo/comps/model/models"
-    ],
-    function (UIComponent, Device, models) {
+    "sap/ui/core/UIComponent"
+],
+    function (UIComponent) {
         "use strict";
 
-        return UIComponent.extend("sap.training.demo.comps.Component", {
+        return UIComponent.extend("sap.training.products.Component", {
             metadata: {
                 manifest: "json"
             },
@@ -20,11 +18,10 @@ sap.ui.define([
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
 
-                // enable routing
-                this.getRouter().initialize();
+                this.mManifest = this.getManifest();
+                this.mAppData = this.getManifestEntry("sap.app");
+                this.mConfig = this.getManifestEntry("/sap.ui5/config");
 
-                // set the device model
-                this.setModel(models.createDeviceModel(), "device");
             }
         });
     }

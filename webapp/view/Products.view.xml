@@ -1,16 +1,35 @@
-<mvc:View
-    controllerName="sap.training.demo.comps.controller.Products"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
-    xmlns="sap.m"
->
-    <Shell id="shell">
-        <App id="app">
-            <pages>
-                <Page id="page" title="{i18n>title}">
-                    <content />
-                </Page>
-            </pages>
-        </App>
-    </Shell>
+<mvc:View controllerName="sap.training.products.controller.Products" xmlns:core="sap.ui.core" displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	
+	<Table items="{/Products}">
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{ID}"/>
+					<Text text="{Name}"/>
+					<Text text="{Description}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column>
+				<header>
+					<Text text="{i18n>columnID}"/>
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>columnName}"/>
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>columnDescription}"/>
+				</header>
+			</Column>
+		</columns>
+	</Table>
+	
+	<Button text="Submit" press="onPress"/>
+	
 </mvc:View>

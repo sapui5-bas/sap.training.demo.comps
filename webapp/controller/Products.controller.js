@@ -7,9 +7,18 @@ sap.ui.define([
     function (Controller) {
         "use strict";
 
-        return Controller.extend("sap.training.demo.comps.controller.Products", {
-            onInit: function () {
+        return Controller.extend("sap.training.products.controller.Products", {
+
+            onPress: function (oEvent) {
+
+                var oComponent = this.getOwnerComponent();
+
+                var mManifest = oComponent.getManifest();
+                var mAppData = oComponent.getManifestEntry("sap.app");
+                var mConfig = oComponent.getManifestEntry("/sap.ui5/config");
 
             }
+
+
         });
     });
